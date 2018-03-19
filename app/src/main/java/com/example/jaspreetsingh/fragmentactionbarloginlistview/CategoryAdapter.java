@@ -48,4 +48,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 2;
     }
+
+    public CharSequence getPageTitle(int postion)   {
+        if (postion==0) {
+            return mContext.getString(R.string.category_home);
+        }
+        else    {
+            return mContext.getString(R.string.category_history);
+        }
+    }
 }
