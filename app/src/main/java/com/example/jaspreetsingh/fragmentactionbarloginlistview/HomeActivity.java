@@ -13,9 +13,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.abs_layout);
+        setContentView(R.layout.activity_category);
+        getSupportFragmentManager().beginTransaction().
+                replace(R.id.container, new HomeFragment())
+                .commit();
     }
 }
