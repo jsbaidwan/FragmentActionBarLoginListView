@@ -3,4 +3,6 @@
     <color name="colorPrimary">#ef293d</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#ef293d</color>
+    <!-- Background color for app -->
+    <color name="tan_background">#FFF7DA</color>
 </resources>
