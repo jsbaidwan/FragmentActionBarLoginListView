@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create a new intent to open the {@link HomeActivity}
-                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
 
                 //Start the new HomeActivity
                 startActivity(homeIntent);

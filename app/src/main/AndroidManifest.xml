@@ -16,15 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+<!--        <activity
             android:name=".HomeActivity"
             android:parentActivityName=".LoginActivity">
 
-            <!-- Parent activity meta-data to support 4.0 and lower -->
+            &lt;!&ndash; Parent activity meta-data to support 4.0 and lower &ndash;&gt;
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
-        </activity>
+        </activity>-->
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"

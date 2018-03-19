@@ -1,5 +1,6 @@
 package com.example.jaspreetsingh.fragmentactionbarloginlistview;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,14 +15,18 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 public class CategoryAdapter extends FragmentPagerAdapter {
 
+    /** Context of the App */
+    private Context mContext;
+
     /**
      * Create a new {@link CategoryAdapter} object.
      *
      * @param fm is the fragment manager that will keep each fragment's state in the adapter
      *           across swipes.
      */
-    public CategoryAdapter (FragmentManager fm)  {
+    public CategoryAdapter (Context context, FragmentManager fm)  {
         super(fm);
+        mContext = context;
     }
 
     /**
