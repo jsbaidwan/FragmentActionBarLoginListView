@@ -4,15 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:background="#fdfdfd"
     tools:context="com.example.jaspreetsingh.fragmentactionbarloginlistview.LoginActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mahindralogo"
+        android:paddingTop="60dp"
+        android:paddingBottom="60dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ed_token_no"
-        android:hint="Token Number"/>
+        android:hint="Token Number"
+
+        android:gravity="center_vertical"
+
+        />
 
     <EditText
         android:layout_width="match_parent"
