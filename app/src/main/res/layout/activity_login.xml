@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/mahindralogo"
+        android:src="@mipmap/ic_launcher_round"
         android:paddingTop="60dp"
         android:paddingBottom="60dp"/>
 
