@@ -1,6 +1,7 @@
 package com.example.jaspreetsingh.fragmentactionbarloginlistview;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -52,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClicked = item.getItemId();
-        if (itemThatWasClicked == R.id.menu_logout)
-        {
-
+        if (itemThatWasClicked == R.id.menu_logout){
+            Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(logoutIntent);
         }
         return super.onContextItemSelected(item);
     }
