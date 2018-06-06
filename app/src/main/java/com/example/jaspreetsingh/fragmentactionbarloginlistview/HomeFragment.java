@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -25,6 +26,9 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_home, container, false);
 
         //getSupportActionBar().setCustomView(R.layout.abs_layout);
+
+        Button scanBarcode = (Button) getView().findViewById(R.id.button_scan_barcode);
+
 
         return rootView;
     }
