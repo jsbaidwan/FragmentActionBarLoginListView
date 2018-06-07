@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--An Scanner overlay is an extra layer that sits on top of a View (the "host view") which is drawn after
+    all other content in that view (including children, if the view is a ViewGroup).
+    Interaction with the overlay layer is done by adding and removing drawables.-->
+<resources>
+    <integer name="scanner_rect_width">230</integer>
+    <integer name="scanner_rect_height">230</integer>
+    <integer name="line_width">4</integer>
+    <integer name="line_speed">5</integer>
+</resources>

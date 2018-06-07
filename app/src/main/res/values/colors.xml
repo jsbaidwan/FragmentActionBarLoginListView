@@ -5,5 +5,6 @@
     <color name="colorAccent">#ef293d</color>
     <!-- Background color for app -->
     <color name="tan_background">#FFF7DA</color>
+    <!-- Blue color line for scanner -->
     <color name="scanner_line">#00ceff</color>
 </resources>
