@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import com.example.jaspreetsingh.fragmentactionbarloginlistview.R;
 import com.google.android.gms.vision.CameraSource;
@@ -28,5 +29,9 @@ public class ScanActivity extends AppCompatActivity {
                 //Set the Barcode format you want to use
                 .setBarcodeFormats(Barcode.QR_CODE)
                 .build();
+        if(!barcode.isOperational()){
+            Toast.makeText(getApplicationContext(), "Sorry, Couldn't setup the detector", Toast.LENGTH_LONG).show();
+            this.finish();
+        }
     }
 }
