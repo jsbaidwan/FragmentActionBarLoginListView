@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
         //getSupportActionBar().setCustomView(R.layout.abs_layout);
 
-/*        Button barcodeButton = (Button) getView().findViewById(R.id.button_scan_barcode);
+/*        Button barcodeButton = (B3utton) getView().findViewById(R.id.button_scan_barcode);
 
         barcodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
