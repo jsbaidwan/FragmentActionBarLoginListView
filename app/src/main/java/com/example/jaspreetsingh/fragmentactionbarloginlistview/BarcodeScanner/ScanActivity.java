@@ -21,6 +21,12 @@ public class ScanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
         cameraView = (SurfaceView) findViewById(R.id.cameraView);
-
+        //
+        cameraView.setZOrderMediaOverlay(true);
+        holder = cameraView.getHolder();
+        barcode = new BarcodeDetector.Builder(this)
+                //Set the Barcode format you want to use
+                .setBarcodeFormats(Barcode.QR_CODE)
+                .build();
     }
 }
