@@ -33,5 +33,28 @@ public class ScanActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Sorry, Couldn't setup the detector", Toast.LENGTH_LONG).show();
             this.finish();
         }
+        cameraSource = new CameraSource.Builder(this, barcode)
+                .setFacing(cameraSource.CAMERA_FACING_BACK)
+                .setRequestedFps(24)
+                .setAutoFocusEnabled(true)
+                .setRequestedPreviewSize(1920, 1025)
+                .build();
+        cameraView.getHolder().addCallback(new SurfaceHolder.Callback() {
+            @Override
+            public void surfaceCreated(SurfaceHolder surfaceHolder) {
+
+            }
+
+            @Override
+            public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+
+            }
+        });
+
     }
 }
