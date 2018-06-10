@@ -1,5 +1,8 @@
 package com.example.jaspreetsingh.fragmentactionbarloginlistview.BarcodeScanner;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
@@ -10,6 +13,8 @@ import com.example.jaspreetsingh.fragmentactionbarloginlistview.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+
+import java.io.IOException;
 
 public class ScanActivity extends AppCompatActivity {
     // SurfaceView is used for custom view on the screen
@@ -42,7 +47,16 @@ public class ScanActivity extends AppCompatActivity {
         cameraView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
-
+                try{
+                    // Determine whether you have been granted a Camera permission.
+                    if(ContextCompat.checkSelfPermission(ScanActivity.this,
+                            Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+                        cameraSource.start(cameraView.getHolder());
+                    }
+                }
+                catch (IOException e){
+                    e.printStackTrace();
+                }
             }
 
             @Override
