@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Intent;
+
+import com.example.jaspreetsingh.fragmentactionbarloginlistview.BarcodeScanner.ScanActivity;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +36,8 @@ public class HomeFragment extends Fragment {
         barcodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), ScanActivity.class);
+                startActivityForResult(intent);
             }
         });
 
