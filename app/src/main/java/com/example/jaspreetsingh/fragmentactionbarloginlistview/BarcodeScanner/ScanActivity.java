@@ -9,6 +9,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
 import android.util.SparseArray;
+import android.content.Intent;
 
 import com.example.jaspreetsingh.fragmentactionbarloginlistview.R;
 import com.google.android.gms.vision.CameraSource;
@@ -78,7 +79,13 @@ public class ScanActivity extends AppCompatActivity {
           }
           @Override
           public void receiveDetections(Detector.Detections<Barcode> detections)    {
-
+              final SparseArray<Barcode> barcode = detections.getDetectedItems();
+              if(barcode.size() > 0)    {
+                  Intent intent = new Intent();
+                  intent.putExtra("barcode", barcode.valueAt(0));
+                  setResult(RESULT_OK, intent);
+                  finish();
+              }
           }
         });
     }
