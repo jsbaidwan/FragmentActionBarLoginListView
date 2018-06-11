@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
+import android.util.SparseArray;
 
 import com.example.jaspreetsingh.fragmentactionbarloginlistview.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.android.gms.vision.Detector;
 
 import java.io.IOException;
 
@@ -35,7 +37,8 @@ public class ScanActivity extends AppCompatActivity {
                 .setBarcodeFormats(Barcode.QR_CODE)
                 .build();
         if(!barcode.isOperational()){
-            Toast.makeText(getApplicationContext(), "Sorry, Couldn't setup the detector", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Sorry, Couldn't setup the detector",
+             Toast.LENGTH_LONG).show();
             this.finish();
         }
         cameraSource = new CameraSource.Builder(this, barcode)
@@ -69,6 +72,14 @@ public class ScanActivity extends AppCompatActivity {
 
             }
         });
+        barcode.setProcessor(new Detector.Processor<Barcode>()   {
+          @Override
+          public void release() {
+          }
+          @Override
+          public void receiveDetections(Detector.Detections<Barcode> detections)    {
 
+          }
+        });
     }
 }
