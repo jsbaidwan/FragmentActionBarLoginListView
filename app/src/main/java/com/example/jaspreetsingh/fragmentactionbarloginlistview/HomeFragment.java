@@ -18,6 +18,9 @@ import com.example.jaspreetsingh.fragmentactionbarloginlistview.BarcodeScanner.S
  */
 public class HomeFragment extends Fragment {
 
+    public static final int REQUEST_CODE = 100;
+    public static final int PERMISSION_REQUEST = 200;
+    TextView result;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -36,8 +39,8 @@ public class HomeFragment extends Fragment {
         barcodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ScanActivity.class);
-                startActivityForResult(intent);
+                Intent intent = new Intent(getActivity().getBaseContext(), ScanActivity.class);
+                getActivity().startActivity(intent);
             }
         });
 
