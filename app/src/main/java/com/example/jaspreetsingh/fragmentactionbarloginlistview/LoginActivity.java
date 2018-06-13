@@ -41,7 +41,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(homeIntent);
             }
         });*/
-
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST);
+        }
         Button barcodeButton = (Button) findViewById(R.id.button_login_page);
 
         barcodeButton.setOnClickListener(new View.OnClickListener() {
