@@ -54,5 +54,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+            if(data != null){
+                final Barcode barcode = data.getParcelableExtra("barcode");
+                result.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        result.setText(barcode.displayValue);
+                    }
+                });
 
+            }
+        }
+    }
 }
