@@ -27,8 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.abs_layout);
 
-        result = (TextView) findViewById(R.id.result);
-/*        Button loginButton = (Button) findViewById(R.id.button_login_page);
+
+        Button loginButton = (Button) findViewById(R.id.button_login_page);
 
         // Set a click listener on the button
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -40,33 +40,10 @@ public class LoginActivity extends AppCompatActivity {
                 //Start the new HomeActivity
                 startActivity(homeIntent);
             }
-        });*/
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST);
-        }
-        Button barcodeButton = (Button) findViewById(R.id.button_login_page);
-
-        barcodeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, ScanActivity.class);
-                startActivityForResult(intent, REQUEST_CODE);
-            }
         });
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-            if(data != null){
-                final Barcode barcode = data.getParcelableExtra("barcode");
-                result.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        result.setText(barcode.displayValue);
-                    }
-                });
 
-            }
-        }
+
+
     }
+
 }
