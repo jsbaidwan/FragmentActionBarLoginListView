@@ -53,6 +53,7 @@ public class HomeFragment extends Fragment {
         barcodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // To start scan barcode activity
                 Intent intent = new Intent(getActivity(), ScanActivity.class);
                 startActivity(intent);
             }
